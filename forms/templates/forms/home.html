@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Students information database</title>
+	</head>
+	<body>
+		<ul>
+			{% for card in cards %}
+				<li>{{ card.first_name }} {{ card.last_name }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

@@ -19,5 +19,5 @@ from forms import urls as forms_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include(forms_urls))
+    path('', include(forms_urls))
 ]
