@@ -6,7 +6,7 @@ from forms.forms import StudentForm
 
 import datetime
 
-class TestStudentCardModel(TestCase):
+class StudentCardModelTests(TestCase):
 	def setUp(self):
 		self.card1 = baker.make(StudentCard, first_name='Nick', last_name='Mason')
 		self.card2 = baker.make(StudentCard, first_name='Dave')
@@ -24,7 +24,7 @@ class TestStudentCardModel(TestCase):
 	def test_str_method(self):
 		self.assertEqual(self.card1.__str__(), 'Nick Mason')
 
-class TestStudentForm(TestCase):
+class StudentFormTests(TestCase):
 	def test_form_has_fields(self):
 		form = StudentForm()
 		expected = ['first_name', 'last_name', 'birth_date', 'country_of_origin', 'study', 'job']
