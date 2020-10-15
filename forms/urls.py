@@ -3,4 +3,6 @@ from forms import views
 
 app_name = 'forms'
 
-urlpatters = []
+urlpatterns = [
+	path('/', views.home, name='home')
+]
