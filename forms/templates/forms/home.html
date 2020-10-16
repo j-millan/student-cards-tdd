@@ -8,7 +8,7 @@
 		<a href="{% url 'forms:student_form' %}">Send new info</a>
 		<ul>
 			{% for card in cards %}
-				<li>{{ card.first_name }} {{ card.last_name }}</li>
+				<li><a href="{% url 'forms:card_detail' card.pk %}">{{ card.get_full_name }}</a></li>
 			{% endfor %}
 		</ul>
 	</body>

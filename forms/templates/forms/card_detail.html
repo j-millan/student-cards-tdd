@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>{{ card.first_name }} {{ card.last_name }}</title>
+		<title>{{ card.get_full_name }}</title>
 	</head>
 	
 	<body>
@@ -34,7 +34,7 @@
 				<tr>
 					<th>Job</th>
 					<td>
-						{% if card.first_name %}
+						{% if card.job %}
 							YES
 						{% else %}
 							NO

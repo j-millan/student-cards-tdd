@@ -27,6 +27,10 @@ class HomeViewTests(TestCase):
 	def test_renders_student_cards(self):
 		self.assertContains(self.response, f'{self.card.first_name} {self.card.last_name}')
 
+	def test_contains_links_to_student_cards_detail(self):
+		card_detail_url = reverse('forms:card_detail', kwargs={'pk': 1})
+		self.assertContains(self.response, f'href="{card_detail_url}')
+
 	def test_contains_link_to_user_form_view(self):
 		student_form_url = reverse('forms:student_form')
 		self.assertContains(self.response, 'href="{0}"'.format(student_form_url))
