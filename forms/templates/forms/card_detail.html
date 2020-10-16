@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ card.first_name }} {{ card.last_name }}</title>
+	</head>
+	
+	<body>
+		<table border="2px" style="border-collapse: collapse;">
+			<thead>
+				<th colspan="2">Student no. {{ card.pk }} info</th>
+			</thead>
+			<tbody style="text-align: left;">
+				<tr>
+					<th>First name</th>
+					<td>{{ card.first_name }}</td>
+				</tr>
+				<tr>
+					<th>Last name</th>
+					<td>{{ card.last_name }}</td>
+				</tr>
+				<tr>
+					<th>Birth date</th>
+					<td>{{ card.birth_date }}</td>
+				</tr>
+				<tr>
+					<th>Country of origin</th>
+					<td>{{ card.get_country_of_origin_display }}</td>
+				</tr>
+				<tr>
+					<th>Study</th>
+					<td>{{ card.study }} ({{ card.get_study_display }})</td>
+				</tr>
+				<tr>
+					<th>Job</th>
+					<td>
+						{% if card.first_name %}
+							YES
+						{% else %}
+							NO
+						{% endif %}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
