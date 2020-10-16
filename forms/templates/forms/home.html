@@ -5,6 +5,7 @@
 		<title>Students information database</title>
 	</head>
 	<body>
+		<a href="{% url 'forms:student_form' %}">Send new info</a>
 		<ul>
 			{% for card in cards %}
 				<li>{{ card.first_name }} {{ card.last_name }}</li>

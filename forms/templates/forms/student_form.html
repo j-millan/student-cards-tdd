@@ -1,0 +1,31 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Send student info</title>
+	</head>
+
+	<body>
+		<h1>Send your student information</h1>
+		<form method="POST">
+			{% csrf_token %}
+			{% for field in form %}
+				{{ field.label_tag }}
+				{% if field == form.birth_date %}
+					<input type="date" name="birth_date" id="id_birth_date">
+				{% else %}
+					{% render_field field %}
+					{% if field.errors %}
+						{% for error in field.errors %}			
+							<small style="color: red;">{{ error }}</small>
+						{% endfor %}
+					{% endif %}
+				{% endif %}
+				<br>
+			{% endfor %}
+			<button type="submit">Send</button>
+		</form>
+	</body>
+</html>
